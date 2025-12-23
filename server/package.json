@@ -1,0 +1,14 @@
+{
+      "name": "ada-scan-api",
+        "type": "module",
+          "scripts": {
+              "start": "node src/index.js"
+                },
+                  "dependencies": {
+                      "express": "^4.19.2",
+                          "puppeteer": "^22.8.0",
+                              "axe-core": "^4.9.1",
+                                  "cors": "^2.8.5"
+                                    }
+                                    
+}

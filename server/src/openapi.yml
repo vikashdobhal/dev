@@ -1,0 +1,40 @@
+openapi: 3.0.1
+info:
+  title: ADA Accessibility Scan API
+    version: "1.0.0"
+
+    servers:
+      - url: https://YOUR_PUBLIC_DOMAIN
+
+      paths:
+        /api/ada-scan:
+            post:
+                  summary: Scan a website for ADA/WCAG issues
+                        operationId: adaScan
+                              requestBody:
+                                      required: true
+                                              content:
+                                                        application/json:
+                                                                    schema:
+                                                                                  type: object
+                                                                                                required: [url]
+                                                                                                              properties:
+                                                                                                                              url:
+                                                                                                                                                type: string
+                                                                                                                                                                  example: https://example.com
+                                                                                                                                                                        responses:
+                                                                                                                                                                                "200":
+                                                                                                                                                                                          description: Scan results
+                                                                                                                                                                                                    content:
+                                                                                                                                                                                                                application/json:
+                                                                                                                                                                                                                              schema:
+                                                                                                                                                                                                                                              type: object
+                                                                                                                                                                                                                                                              properties:
+                                                                                                                                                                                                                                                                                url:
+                                                                                                                                                                                                                                                                                                    type: string
+                                                                                                                                                                                                                                                                                                                      scannedAt:
+                                                                                                                                                                                                                                                                                                                                          type: string
+                                                                                                                                                                                                                                                                                                                                                            summary:
+                                                                                                                                                                                                                                                                                                                                                                                type: object
+                                                                                                                                                                                                                                                                                                                                                                                                  violations:
+                                                                                                                                                                                                                                                                                                                                                                                                                      type: array
